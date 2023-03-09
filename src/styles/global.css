@@ -6,6 +6,10 @@ body {
   @apply font-serif;
 }
 
+div[class^="aspect"] > .gatsby-image-wrapper {
+  position: absolute;
+}
+
 
 .intro-slider .slick-list {
   overflow: initial;
