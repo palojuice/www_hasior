@@ -33,7 +33,7 @@ const IndexPage = () => (
           imgClassName="w-full h-full object-cover"
         />
         <div className="w-full max-w-7xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-4xl lg:text-[120px] text-white text-center uppercase font-bold">
+          <h1 className="text-4xl lg:text-[96px] text-white text-center uppercase font-bold font-serif tracking-tighter leading-normal">
             Władysław Hasior
           </h1>
           <ul className="absolute right-0 text-right pt-12">

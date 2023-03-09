@@ -41,22 +41,36 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: `${__dirname}/src/images/svg`,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
           google: [
             {
-              family: "Roboto",
-              variants: [`300`, `400`, `500`],
+              family: "Hepta Slab",
+              variants: [`300`, `400`, `500`, `600`],
               subsets: [`latin`, `latin-ext`],
             },
             {
-              family: "Oswald",
+              family: "Hepta Slab",
               variants: [`300`, `400`, `500`, `700`],
               subsets: [`latin`, `latin-ext`],
             },
           ],
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-leaflet",
+      options: {
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
   ],

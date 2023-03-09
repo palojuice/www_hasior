@@ -5,8 +5,9 @@ import WorkRowInfo from "../components/atoms/WorkRowInfo"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import IconButton from "../components/atoms/IconButton"
 
-const WorkPage = () => (
+const PhotoPage = () => (
   <Layout>
     <section className="w-full min-h-screen bg-zinc-700 flex justify-center items-center relative">
       <div className="w-full max-w-screen-2xl p-10">
@@ -15,7 +16,7 @@ const WorkPage = () => (
             <div className="px-16 relative">
               <div className="aspect-w-1 aspect-h-1">
                 <StaticImage
-                  src="../images/praca-1.jpeg"
+                  src="../images/hasior-home.jpeg"
                   loading="eager"
                   quality={95}
                   alt="Władysław Hasior"
@@ -78,16 +79,13 @@ const WorkPage = () => (
           </div>
         </div>
       </div>
-      <button
-        className="w-10 h-10 bg-black text-white rounded-full absolute top-10 right-10 z-10"
-        onClick={() => navigate(-1)}
-      >
-        X
-      </button>
+      <div className="absolute top-10 right-10 z-10">
+        <IconButton onClick={() => navigate(-1)}>X</IconButton>
+      </div>
     </section>
   </Layout>
 )
 
 export const Head = () => <Seo title="Władysław Hasior" />
 
-export default WorkPage
+export default PhotoPage

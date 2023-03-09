@@ -1,10 +1,17 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import WorkRowInfo from "../components/atoms/WorkRowInfo"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Sidebar from "../components/organisms/sidebar"
+import YearsList from "../components/molecules/YearsList"
+import YearsListItem from "../components/atoms/YearsListItem"
+import InfoButton from "../components/atoms/InfoButton"
+import InfoButtonWithText from "../components/atoms/InfoButtonWithText"
+import LinkWithIcon from "../components/atoms/LinkWithIcon"
+import ArrowRightIcon from "../images/svg/arrow-right.svg"
+
+const years = ["1929", "30", "40", "50", "60", "70", "80", "1999"]
 
 const PersonPage = () => (
   <Layout>
@@ -12,143 +19,18 @@ const PersonPage = () => (
       <div className="max-w-screen-2xl mx-auto px-4 lg:px-6">
         <div className="flex -mx-2">
           <div className="w-1/3 px-2">
-            <div className="min-h-screen flex flex-col justify-between">
-              <div>
-                <div className="p-10">
-                  <span className="uppercase text-black">
-                    <Link to="/" className="uppercase text-black no-underline">
-                      Władysław Hasior
-                    </Link>
-                  </span>
-                </div>
-                <div className="p-10">
-                  <ul className="m-0">
-                    <li>
-                      <a
-                        href=""
-                        className="font-bold text-black text-xl no-underline"
-                      >
-                        Postać
-                      </a>
-                      <ul className="ml-8">
-                        <li>
-                          <a
-                            href=""
-                            className="text-black text-base no-underline"
-                          >
-                            Życiorys
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href=""
-                            className="text-gray-500 text-base no-underline"
-                          >
-                            Mapa
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href=""
-                            className="text-gray-500 text-base no-underline"
-                          >
-                            Bibliografia
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href=""
-                            className="text-gray-500 text-base no-underline"
-                          >
-                            Filmografia
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a
-                        href=""
-                        className="font-bold text-gray-500 text-xl no-underline"
-                      >
-                        Twórczość
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href=""
-                        className="font-bold text-gray-500 text-xl no-underline"
-                      >
-                        Galeria
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="p-10">
-                <ul className="m-0">
-                  <li>
-                    <a href="" className="text-gray-500 text-base no-underline">
-                      O projekcie
-                    </a>
-                  </li>
-                  <li>
-                    <a href="" className="text-gray-500 text-base no-underline">
-                      Kontakt
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <Sidebar />
           </div>
           <div className="w-2/3 px-2">
-            <div className="py-10">
-              <ul className="m-0 flex items-center space-x-4">
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    1929'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    30'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    40'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    50'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    60'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    70'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    80'
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="text-gray-700 no-underline text-xl">
-                    1999'
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <YearsList>
+              {years.map(year => {
+                return <YearsListItem year={year} url="/" />
+              })}
+            </YearsList>
             <div className="py-10">
               <h1 className="text-black text-2xl font-bold">1932</h1>
               <div className="flex flex-wrap -mx-2">
-                <div className="w-1/2 px-2">
+                <div className="w-full lg:w-7/12 px-2">
                   <div className="text-xl lg:pr-10">
                     Urodził się 14 maja 1928 roku w Nowym Sączu, zmarł 14 lipca
                     1999 roku w Krakowie; został pochowany na Pęksowym Brzysku w
@@ -158,20 +40,25 @@ const PersonPage = () => (
                     Hasior
                   </div>
                 </div>
-                <div className="w-1/2 px-2">
-                  <StaticImage
-                    src="../images/hasior-home.jpeg"
-                    loading="eager"
-                    quality={95}
-                    alt="Władysław Hasior"
-                    className="w-full"
-                    imgClassName="w-full h-full object-cover"
-                  />
+                <div className="w-full lg:w-5/12 px-2">
+                  <div className="relative">
+                    <StaticImage
+                      src="../images/hasior-home.jpeg"
+                      loading="eager"
+                      quality={95}
+                      alt="Władysław Hasior"
+                      className="w-full"
+                      imgClassName="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 right-3">
+                      <InfoButton url="/photo" />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="mt-10">
-                <div className="text-black text-xl font-bold">
-                  Rozbudowany opis
+                <div className="mb-4">
+                  <InfoButtonWithText url="/opis" text="rozbudowany opis" />
                 </div>
                 <div className="text-sm text-gray-700">
                   <span className="block">Czas czytania: 3 minuty</span>
@@ -179,13 +66,9 @@ const PersonPage = () => (
                 </div>
               </div>
               <div className="flex justify-end mt-10">
-                <a
-                  href=""
-                  className="text-black text-2xl font-bold no-underline inline-flex items-center"
-                >
-                  następne wspomnienie
-                  <span className="inline-block w-12 h-12 bg-black rounded-full ml-3"></span>
-                </a>
+                <LinkWithIcon url="/person" text="następne wspomnienie">
+                  <ArrowRightIcon className="fill-current" />
+                </LinkWithIcon>
               </div>
             </div>
           </div>

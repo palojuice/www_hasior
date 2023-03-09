@@ -1,3 +1,125 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-serif;
+}
+
+
+.intro-slider .slick-list {
+  overflow: initial;
+}
+
+.slick-slide {
+  @apply transition-all ease-in duration-300;
+  opacity: 0;
+}
+
+.slick-slide.slick-active.slick-current {
+  opacity: 1;
+}
+
+.slick-slide.slick-active.slick-current + div {
+  opacity: 1;
+  filter: blur(10px);
+}
+
+.rsc-content {
+  padding-top: 60px;
+}
+
+.rsc-container {
+  background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: inherit !important;
+}
+
+.rsc-footer {
+  @apply hidden;
+}
+
+.rsc-os-options {
+  @apply flex flex-col items-end;
+}
+
+.rsc-ts-bot, .rsc-ts-user {
+  @apply relative !important;
+}
+
+.rsc-ts-user {
+  display: block !important;
+  padding-left: 50%;
+}
+
+
+.rsc-ts-bot::before {
+  content: "Hasior:";
+  @apply absolute top-0 left-0 transform -translate-y-8 px-6;
+}
+
+.rsc-ts-user::before {
+  content: "Ty:";
+  @apply absolute top-0 left-1/2 transform -translate-y-4;
+}
+
+.rsc-ts-image-container {
+  @apply block !important;
+}
+
+.rsc-ts-bot .rsc-ts-bubble {
+    background: #fff;
+    border-radius: 18px 18px 18px 18px;
+    box-shadow: none;
+    color: #000;
+    display: inline-block;
+    font-size: 22px;
+    width: 50%;
+    max-width: 720px;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    position: relative;
+    padding: 12px;
+    border: 1px solid #000;
+}
+
+.rsc-ts-user .rsc-ts-bubble {
+  background: #000;
+  border-radius: 18px 18px 18px 18px;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 22px;
+  width: 100%;
+  max-width: 635px;
+  margin: 0 0 10px 0;
+  overflow: hidden;
+  position: relative;
+  padding: 12px;
+  border: 1px solid #000;
+}
+
+.rsc-ts-image {
+  margin: 0;
+  display: none;
+}
+
+.rsc-os-option-element {
+  background: transparent !important;
+  border: 1px solid  #fff !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+  color: black !important;
+  display: inline-block !important;
+  font-size: 22px !important;
+  padding: 12px !important;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-slate-700 p-8 text-white text-left;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}

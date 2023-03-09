@@ -5,6 +5,12 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Hepta Slab"],
+      serif: ["Hepta Slab"],
+      display: ["Hepta Slab"],
+      body: ["Hepta Slab"],
+    },
     extend: {
       screens: {
         xs: "480px",
@@ -17,5 +23,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 }
