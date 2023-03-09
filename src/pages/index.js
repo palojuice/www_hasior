@@ -8,15 +8,15 @@ import Seo from "../components/seo"
 const links = [
   {
     text: "Porozmawiaj z Hasiorem",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
+    url: "/slide",
   },
   {
     text: "Zobacz sylwetkę",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
+    url: "/person",
   },
   {
     text: "Poznaj go bliżej",
-    url: "https://www.gatsbyjs.com/plugins",
+    url: "/prace",
   },
 ]
 
@@ -39,13 +39,13 @@ const IndexPage = () => (
           <ul className="absolute right-0 text-right pt-12">
             {links.map(link => (
               <li key={link.url} className="">
-                <a
+                <Link
                   className="text-black no-underline text-3xl font-bold flex items-center justify-end"
-                  href={link.url}
+                  to={link.url}
                 >
                   {link.text}
                   <span className="inline-block w-12 h-12 bg-black rounded-full ml-3"></span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
